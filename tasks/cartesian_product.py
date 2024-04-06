@@ -1,17 +1,17 @@
-from typing import TypeVar
+from typing import Any
 
-__all__ = ("cartesian_product",)
-
-
-T1 = TypeVar("T1")
-T2 = TypeVar("T2")
+__all__ = (
+    'cartesian_product',
+)
 
 
-def cartesian_product(arr1: list[T1], arr2: list[T2]) -> list[tuple[T1, T2]]:
-    """Определяет декартово произведение двух списков.
-
-    Example:
-        >> cartesian_product([1, 2], [3, 4])
-        [(1, 3), (1, 4), (2, 3), (2, 4)]
+def cartesian_product(arr1: list[Any], arr2: list[Any]) -> list:
     """
-    raise NotImplementedError
+    Должна возвращать все пары элементы двух массивов:
+    cartesian_product([1, 2], [3, 4]) == [(1, 3), (1, 4), (2, 3), (2, 4)]
+    """
+    ans = []
+    for i in arr1:
+        for j in arr2:
+            ans.append((i, j))
+    return ans
